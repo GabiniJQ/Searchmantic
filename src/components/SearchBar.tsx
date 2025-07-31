@@ -11,6 +11,7 @@ const SearchBar = () => {
   const defaultQuery = searchParams.get('query') || ''
   const inputRef = useRef<HTMLInputElement>(null)
   const [isSearching, startTransition] = useTransition()
+  const [hasSearched, setHasSearched] = useState(false)
   const router = useRouter()
   const [query, setQuery] = useState<string>(defaultQuery)
 
@@ -18,10 +19,17 @@ const SearchBar = () => {
     startTransition(() => {
       router.push(`/search?query=${query}`)
     })
+
+    setHasSearched(true)
+
   }
 
   return (
-    <div className='relative w-full h-12 flex flex-col bg-white rounded-t-md'>
+    <div className={`relative w-full h-12 flex flex-col bg-white 
+      ${hasSearched ? 'rounded-t-md' : 'rounded-md'}
+      ${query !== '' ? 'rounded-t-md' : 'rounded-md'}
+    `}
+    >
       <div className='relative h-12 z-10 rounded-md'>
         <Input
           className='h-full pr-20'
@@ -38,7 +46,7 @@ const SearchBar = () => {
           value={query}
           onChange={(e) => setQuery(e.currentTarget.value)}
           disabled={isSearching}
-          placeholder='Ex: Great jacket, dark  jacket, etc.'
+          placeholder='Ex: Great jacket, dark jacket, etc.'
         />
 
         <Button
