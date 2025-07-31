@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Icons } from '@/components/Icons'
 import SearchBar from '@/components/SearchBar'
+import Link from 'next/link'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -58,9 +59,11 @@ export default function RootLayout({
             <div className='h-full w-full flex flex-col items-center gap-4'>
               <Icons.Sparkles className='h-16 w-16' />
 
-              <h1 className='tracking-tight text-4xl sm:text-6xl font-bold'>
-                MagicSearch
-              </h1>
+              <Link href='/'>
+                <h1 className='tracking-tight text-4xl sm:text-6xl font-bold text-black'>
+                  Searchmantic
+                </h1>
+              </Link>
 
               <p>
                 A semantic search engine delivering precise answers and relevant
