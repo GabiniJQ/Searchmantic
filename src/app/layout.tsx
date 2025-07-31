@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className='relative min-h-screen isolate overflow-hidden border-b border-gray-200 bg-white'>
+        <div className='relative min-h-screen isolate overflow-hidden border-b border-gray-200 bg-gradient-to-br from-slate-200 via-white to-amber-50'>
           <svg
             className='absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]'
             aria-hidden='true'
@@ -66,12 +66,12 @@ export default function RootLayout({
               </Link>
 
               <p>
-                A semantic search engine delivering precise answers and relevant
+                A semantic search engine delivering relevant
                 results by understanding context, meaning, and relationships in
                 your queries.
               </p>
 
-              <div className='mx-auto mt-16 w-full max-w-2xl flex flex-col'>
+              <div className='mx-auto mt-16 w-full max-w-2xl flex flex-col rounded-t-md'>
                 <SearchBar />
 
                 {children}

@@ -21,10 +21,10 @@ const SearchBar = () => {
   }
 
   return (
-    <div className='relative w-full h-14 flex flex-col bg-white'>
-      <div className='relative h-10 z-10 rounded-md'>
+    <div className='relative w-full h-12 flex flex-col bg-white rounded-t-md'>
+      <div className='relative h-12 z-10 rounded-md'>
         <Input
-          className='h-full'
+          className='h-full pr-20'
           ref={inputRef}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
@@ -38,6 +38,7 @@ const SearchBar = () => {
           value={query}
           onChange={(e) => setQuery(e.currentTarget.value)}
           disabled={isSearching}
+          placeholder='Ex: Great jacket, dark  jacket, etc.'
         />
 
         <Button

@@ -48,7 +48,7 @@ const Page = async ({ searchParams }: PageProps) => {
       .filter((existingProduct) => {
         if (
           products.some((product) => product.id === existingProduct.id) ||
-          existingProduct.score < 0.9
+          existingProduct.score < 0.7
         ) {
           return false
         } else {
