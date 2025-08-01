@@ -14,7 +14,7 @@ type PageProps = {
 }
 
 const page = async ({ params }: PageProps) => {
-  const { productId } = await params
+  const { productId } = params
 
   if (!productId) return notFound()
 

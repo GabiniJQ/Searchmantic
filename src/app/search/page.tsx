@@ -18,7 +18,7 @@ type CoreProduct = Omit<Product, 'createdAt' | 'updatedAt'>
 const index = new Index<CoreProduct>()
 
 const Page = async ({ searchParams }: PageProps) => {
-  const { query } = await searchParams
+  const { query } = searchParams
 
   if (Array.isArray(query) || !query) return redirect('/')
 
