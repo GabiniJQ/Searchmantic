@@ -7,17 +7,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
-interface PageProps {
-  searchParams: {
-    [key: string]: string | string[] | undefined
-  }
-}
-
 type CoreProduct = Omit<Product, 'createdAt' | 'updatedAt'>
 
 const index = new Index<CoreProduct>()
 
-const Page = async ({ searchParams }: PageProps) => {
+const Page = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) => {
   const { query } = searchParams
 
   if (Array.isArray(query) || !query) return redirect('/')
