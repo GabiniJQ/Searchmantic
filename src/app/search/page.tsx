@@ -14,9 +14,9 @@ const index = new Index<CoreProduct>()
 const Page = async ({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) => {
-  const { query } = searchParams
+  const { query } = await searchParams
 
   if (Array.isArray(query) || !query) return redirect('/')
 
