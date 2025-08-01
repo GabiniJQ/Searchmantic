@@ -13,7 +13,7 @@ type PageProps = {
   }
 }
 
-const page = async ({ params }: PageProps) => {
+const Page = async ({ params }: PageProps) => {
   const { productId } = params
 
   if (!productId) return notFound()
@@ -86,4 +86,4 @@ const page = async ({ params }: PageProps) => {
   )
 }
 
-export default page
+export default Page
