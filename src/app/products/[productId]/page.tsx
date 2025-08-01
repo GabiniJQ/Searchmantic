@@ -7,13 +7,7 @@ import { Check, Shield } from 'lucide-react'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
-type PageProps = {
-  params: {
-    productId: string
-  }
-}
-
-const Page = async ({ params }: PageProps) => {
+const Page = async ({ params }: { params: { productId: string } }) => {
   const { productId } = params
 
   if (!productId) return notFound()
