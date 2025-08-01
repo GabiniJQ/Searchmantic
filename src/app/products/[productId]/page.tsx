@@ -7,8 +7,8 @@ import { Check, Shield } from 'lucide-react'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
-const Page = async ({ params }: { params: { productId: string } }) => {
-  const { productId } = params
+const Page = async ({ params }: { params: Promise<{ productId: string }> }) => {
+  const { productId } = await params
 
   if (!productId) return notFound()
 
