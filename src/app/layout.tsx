@@ -4,6 +4,7 @@ import './globals.css'
 import { Icons } from '@/components/Icons'
 import SearchBar from '@/components/SearchBar'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -73,7 +74,9 @@ export default function RootLayout({
               </p>
 
               <div className='mx-auto mt-16 w-full max-w-2xl flex flex-col rounded-t-md'>
-                <SearchBar />
+                <Suspense>
+                  <SearchBar />
+                </Suspense>
 
                 {children}
               </div>
